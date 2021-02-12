@@ -71,6 +71,9 @@ public class MainPage extends BaseIndexPage {
     @FindBy(xpath = "//p[contains (text(), 'Child records loop')]/parent::a")
     private WebElement childRecordsLoop;
 
+    @FindBy(xpath = "//p[contains (text(), 'Visibility')]/parent::a")
+    private WebElement menuVisibilityEvents;
+
     public MainPage(WebDriver driver) {
         super(driver);
     }
@@ -173,5 +176,10 @@ public class MainPage extends BaseIndexPage {
     public ChildRecordsLoopPage clickMenuChildRecordsLoop() {
         clickMainMenu(childRecordsLoop);
         return new ChildRecordsLoopPage(getDriver());
+    }
+
+    public VisibilityEventsPage clickMenuVisibilityEvents() {
+        clickMainMenu(menuVisibilityEvents);
+        return new VisibilityEventsPage(getDriver());
     }
 }
